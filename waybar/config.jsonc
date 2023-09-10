@@ -1,0 +1,158 @@
+{
+  "layer": "top",
+  "position": "top",
+  "mod": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "height": 0,
+  "margin-left": 4,
+  "margin-right": 4,
+  "spacing": 0,
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window",
+  ],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "custom/weather",
+    "custom/updates",
+    "cpu",
+    "memory",
+    "disk",
+    "battery",
+    "network",
+    "bluetooth",
+    "backlight",
+    "pulseaudio",
+    "tray"
+  ],
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "urgent": "",
+      "active": "",
+      "default": ""
+    },
+    "disable-scroll": true,
+    "all-outputs": true,
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+  },
+  "hyprland/window": {
+    "format": "  {}",
+    "max-length": 35
+  },
+  "clock": {
+    "interval": 1,
+    "format": "{:%b %d %Y - %H:%M}",
+    "tooltip-format": "{: %A %d/%m/%Y %T}"
+  },
+  "custom/weather": {
+    "tooltip": true,
+    "format": "{}",
+    "interval": 1,
+    "exec": "~/.config/waybar/scripts/waybar-wttr.py",
+    "return-type": "json"
+  },
+  "custom/updates": {
+    "format": " {}",
+    "interval": 7200,
+    "exec": "i=$(checkupdates); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'",
+    "exec-if": "exit 0",
+    "on-click": "kitty -e sudo pacman -Syu",
+    "signal": 8
+  },
+  "cpu": {
+    "interval": 1,
+    "format": " {usage}%",
+    "on-click": "kitty --start-as=fullscreen --title htop sh -c 'htop'"
+  },
+  "memory": {
+    "interval": 1,
+    "format": " {}%",
+    "tooltip": true,
+    "tooltip-format": "Memory - {used:0.1f}GB used",
+    "on-click": "kitty --start-as=fullscreen --title htop sh -c 'htop'"
+  },
+  "disk": {
+    "interval": 1,
+    "format": "󰋊 {percentage_used}%",
+    "path": "/",
+    "format-alt-click": "click-right",
+    "format-alt": "󰋊 {percentage_used}%",
+    "tooltip": true,
+    "tooltip-format": "Disk - {used} used out of {total} on {path} ({percentage_used}%)",
+    "on-click": "kitty --start-as=fullscreen --title htop sh -c 'htop'"
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+  },
+  "network": {
+    "format-wifi": " {signalStrength}%",
+    "format-ethernet": "",
+    "tooltip-format": "{ifname} {ipaddr}/{cidr} via {gwaddr} ",
+    "format-linked": "{ifname} ",
+    "format-disconnected": "⚠",
+    "format-alt": "{ifname}",
+    "max-length": 50
+  },
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "⊝",
+    "format-connected": " {num_connections}",
+    "tooltip-format": "{device_alias}",
+    "tooltip-format-connected": " {device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "on-click": "blueman-manager"
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "on-scroll-up": "~/.config/waybar/scripts/brightness --inc",
+    "on-scroll-down": "~/.config/waybar/scripts/brightness --dec",
+    "on-click": "~/.config/waybar/scripts/dark-mode",
+    "on-click-right": "~/.config/waybar/scripts/light-mode",
+    "min-length": 6
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": " Muted",
+    "on-click": "pavucontrol",
+    "on-click-right": "~/.config/waybar/scripts/volume --toggle",
+    "on-scroll-up": "~/.config/waybar/scripts/volume --inc",
+    "on-scroll-down": "~/.config/waybar/scripts/volume --dec",
+    "scroll-step": 5,
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "tooltip": true,
+    "tooltip-format": "{icon} at {volume}%"
+  },
+  "tray": {
+    "icon-size": 13,
+    "spacing": 10
+  }
+}

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+rm -rf ~/.config/hypr
+ln -s $(pwd)/hypr ~/.config/hypr
+
+rm -rf ~/.config/waybar/
+ln -s $(pwd)/waybar ~/.config/waybar

@@ -1,0 +1,126 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Cartograph CF Nerd Font, FiraCode Nerd Font;
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0);
+    color: #cdd6f4;
+}
+
+tooltip {
+    background: #181818;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #11111b;
+}
+
+#workspaces button {
+    padding: 5px;
+    color: #ffffff;
+    background: #181818;
+    margin-right: 5px;
+    border-radius: 10px;
+}
+
+#workspaces button.active {
+    color: #ffffff;
+    background: #eba0ac;
+    border-radius: 10px;
+}
+
+#workspaces button.urgent {
+    color: #11111b;
+    background: #a6e3a1;
+    border-radius: 10px;
+}
+
+#workspaces button:hover {
+    background: #11111b;
+    color: #cdd6f4;
+    border-radius: 10px;
+}
+
+#workspaces,
+#window,
+#clock,
+#custom-weather,
+#custom-updates,
+#cpu,
+#memory,
+#disk,
+#battery,
+#network,
+#bluetooth,
+#backlight,
+#pulseaudio,
+#tray {
+    background: #181818;
+    padding: 3px 10px;
+    margin: 3px 0px;
+}
+
+#workspaces {
+    border-radius: 10px;
+}
+
+#window{
+    color: #cdd6f4;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+#clock {
+    color: #fab387;
+    border-radius: 10px;
+}
+
+#custom-weather {
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+#custom-updates {
+    color: #ffc0cb;
+    margin-left: 10px;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#cpu {
+    color: #a6e3a1;
+}
+
+#memory {
+    color: #f9e2af;
+}
+
+#disk {
+    color: #89b4fa;
+}
+
+#battery {
+    color: #a6e3a1;
+}
+
+#network {
+    color: #f9e2af;
+}
+
+#bluetooth {
+    color: #89b4fa;
+}
+
+#pulseaudio {
+    color: #89b4fa;
+    border-radius: 0px 10px 10px 0px;
+}
+
+#tray {
+    border-radius: 10px;
+    margin-left: 10px;
+}
