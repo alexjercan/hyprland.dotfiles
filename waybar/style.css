@@ -57,6 +57,7 @@ tooltip {
 #battery,
 #network,
 #bluetooth,
+#idle_inhibitor,
 #backlight,
 #pulseaudio,
 #tray {
@@ -113,6 +114,10 @@ tooltip {
 
 #bluetooth {
     color: #89b4fa;
+}
+
+#idle_inhibitor {
+    color: #ab45f1;
 }
 
 #pulseaudio {

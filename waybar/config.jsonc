@@ -23,9 +23,10 @@
     "battery",
     "network",
     "bluetooth",
+    "idle_inhibitor",
     "backlight",
     "pulseaudio",
-    "tray"
+    "tray",
   ],
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -57,7 +58,7 @@
   "custom/weather": {
     "tooltip": true,
     "format": "{}",
-    "interval": 1,
+    "interval": 3600,
     "exec": "~/.config/waybar/scripts/waybar-wttr.py",
     "return-type": "json"
   },
@@ -121,6 +122,13 @@
     "tooltip-format-enumerate-connected": "{device_alias}",
     "on-click": "blueman-manager"
   },
+  "idle_inhibitor": {
+    "format": "{icon}",
+      "format-icons": {
+        "activated": "",
+        "deactivated": ""
+    }
+  },
   "backlight": {
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
@@ -154,5 +162,5 @@
   "tray": {
     "icon-size": 13,
     "spacing": 10
-  }
+  },
 }
