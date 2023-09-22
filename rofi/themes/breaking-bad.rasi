@@ -1,9 +1,9 @@
 * {
-    background: #1e222a;
-    foreground: #E5E9F0;
+    background: #161616;
+    foreground: #F1EFF0;
     border-color: @background;
-    bg-selected: #282c34;
-    grey: #565c64;
+    bg-selected: #292929;
+    grey: #404040;
     spacing: 2;
     width: 30em;
     margin: 0;
