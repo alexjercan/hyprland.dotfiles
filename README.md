@@ -16,6 +16,7 @@
 * [dunst](https://github.com/dunst-project/dunst)
 * [rofi](https://github.com/davatorium/rofi)
 * [swaylock](https://github.com/swaywm/swaylock)
+* [wlogout](https://github.com/ArtsyMacaw/wlogout)
 
 There are also some other packages like rofi, dunst, python, etc. that are
 used, but will add a full list soon.

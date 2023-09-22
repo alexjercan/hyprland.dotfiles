@@ -14,3 +14,6 @@ ln -s $(pwd)/rofi ~/.config/rofi
 
 unlink ~/.config/swaylock/ 2> /dev/null || rm -rf ~/.config/swaylock/
 ln -s $(pwd)/swaylock ~/.config/swaylock
+
+unlink ~/.config/wlogout/ 2> /dev/null || rm -rf ~/.config/wlogout/
+ln -s $(pwd)/wlogout ~/.config/wlogout
