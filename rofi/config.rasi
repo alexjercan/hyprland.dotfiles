@@ -150,4 +150,4 @@ configuration {
   }
 }
 
-@theme "./themes/breaking-bad.rasi"
+@theme "breaking-bad"
