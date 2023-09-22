@@ -1,0 +1,11 @@
+#!/bin/sh
+
+#show a message
+notify-send -h string:x-canonical-private-synchronous:sys-notify -u low "Switching To Breaking Bad Theme"
+
+#set the kitty theme
+kitty +kitten themes Breaking\ Bad
+
+# set the background
+killall swaybg
+swaybg -m fill -i ~/Pictures/wallpapers/breakingbad.jpg

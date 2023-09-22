@@ -1,8 +1,10 @@
 #!/bin/sh
-MODESTR="Dark"
-#show a message
-notify-send -h string:x-canonical-private-synchronous:sys-notify -u low "Switching To $MODESTR Mode"
 
+#show a message
+notify-send -h string:x-canonical-private-synchronous:sys-notify -u low "Switching To Dark Mode"
+
+#set the kitty theme
+kitty +kitten themes Hybrid
 
 #set the GTK theme
 gsettings set org.gnome.desktop.interface gtk-theme "Catppuccin-Mocha-Standard-Sky-Dark"

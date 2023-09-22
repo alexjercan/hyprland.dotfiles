@@ -1,0 +1,12 @@
+#!/bin/sh
+
+iDIR="$HOME/.config/waybar/scripts/themes/"
+
+# Execute accordingly
+if [[ "$1" == "breakingbad" ]]; then
+    . $iDIR/breakingbad
+elif [[ "$1" == "github" ]]; then
+    . $iDIR/github
+elif [[ "$1" == "hybrid" ]]; then
+    . $iDIR/hybrid
+fi
