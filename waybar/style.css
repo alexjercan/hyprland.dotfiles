@@ -1,7 +1,9 @@
+@import "breaking-bad.css";
+
 * {
     border: none;
     border-radius: 0;
-    font-family: Cartograph CF Nerd Font, FiraCode Nerd Font;
+    font-family: Cartograph CF Nerd Font, Iosevka Term;
     font-weight: bold;
     font-size: 14px;
     min-height: 0;
@@ -9,41 +11,15 @@
 
 window#waybar {
     background: rgba(0, 0, 0, 0);
-    color: #cdd6f4;
+    color: @foreground;
 }
 
 tooltip {
-    background: #181818;
+    background: @background;
     border-radius: 10px;
     border-width: 2px;
     border-style: solid;
-    border-color: #11111b;
-}
-
-#workspaces button {
-    padding: 5px;
-    color: #ffffff;
-    background: #181818;
-    margin-right: 5px;
-    border-radius: 10px;
-}
-
-#workspaces button.active {
-    color: #ffffff;
-    background: #eba0ac;
-    border-radius: 10px;
-}
-
-#workspaces button.urgent {
-    color: #11111b;
-    background: #a6e3a1;
-    border-radius: 10px;
-}
-
-#workspaces button:hover {
-    background: #11111b;
-    color: #cdd6f4;
-    border-radius: 10px;
+    border-color: @background;
 }
 
 #workspaces,
@@ -61,7 +37,7 @@ tooltip {
 #backlight,
 #pulseaudio,
 #tray {
-    background: #181818;
+    background: @background;
     padding: 3px 10px;
     margin: 3px 0px;
 }
@@ -70,58 +46,91 @@ tooltip {
     border-radius: 10px;
 }
 
+#workspaces > * {
+    margin: 0px 5px;
+}
+
+#workspaces button {
+    color: @foreground;
+    background: @background;
+    border-radius: 10px;
+}
+
+#workspaces button.active {
+    color: @foreground;
+    background: @color10;
+    border-radius: 10px;
+}
+
+#workspaces button.urgent {
+    color: @foreground;
+    background: @color4;
+    border-radius: 10px;
+}
+
+#workspaces button:hover {
+    color: @foreground;
+    background: @color3;
+    border-radius: 10px;
+}
+
 #window{
-    color: #cdd6f4;
+    color: @foreground;
     border-radius: 10px;
     margin-left: 10px;
 }
 
 #clock {
-    color: #fab387;
+    color: @color4;
     border-radius: 10px;
 }
 
 #custom-weather {
+    color: @foreground;
     border-radius: 10px;
     margin-left: 10px;
 }
 
 #custom-updates {
-    color: #ffc0cb;
+    color: @color1;
     margin-left: 10px;
     border-radius: 10px 0px 0px 10px;
 }
 
 #cpu {
-    color: #a6e3a1;
+    color: @color3;
 }
 
 #memory {
-    color: #f9e2af;
+    color: @color4;
 }
 
 #disk {
-    color: #89b4fa;
+    color: @color5;
 }
 
 #battery {
-    color: #a6e3a1;
+    color: @color14;
 }
 
 #network {
-    color: #f9e2af;
+    color: @color15;
 }
 
 #bluetooth {
-    color: #89b4fa;
+    color: @color12;
 }
 
 #idle_inhibitor {
-    color: #ab45f1;
+    color: @color13;
+}
+
+#backlight {
+    color: @foreground;
 }
 
 #pulseaudio {
-    color: #89b4fa;
+    color: @color11;
     border-radius: 0px 10px 10px 0px;
 }
 
