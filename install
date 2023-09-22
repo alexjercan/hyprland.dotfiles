@@ -5,3 +5,6 @@ ln -s $(pwd)/hypr ~/.config/hypr
 
 rm -rf ~/.config/waybar/
 ln -s $(pwd)/waybar ~/.config/waybar
+
+rm -rf ~/.config/dunst/
+ln -s $(pwd)/dunst ~/.config/dunst
