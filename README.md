@@ -15,6 +15,7 @@
 * [waybar](https://github.com/Alexays/Waybar)
 * [dunst](https://github.com/dunst-project/dunst)
 * [rofi](https://github.com/davatorium/rofi)
+* [swaylock](https://github.com/swaywm/swaylock)
 
 There are also some other packages like rofi, dunst, python, etc. that are
 used, but will add a full list soon.

@@ -11,3 +11,6 @@ ln -s $(pwd)/dunst ~/.config/dunst
 
 unlink ~/.config/rofi 2> /dev/null || rm -rf ~/.config/rofi/
 ln -s $(pwd)/rofi ~/.config/rofi
+
+unlink ~/.config/swaylock/ 2> /dev/null || rm -rf ~/.config/swaylock/
+ln -s $(pwd)/swaylock ~/.config/swaylock
