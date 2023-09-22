@@ -1,75 +1,95 @@
+/*******************************************************************************
+ * ROFI ONELINE THEME USING THE BREAKING BAD COLOR PALETTE
+ * User                     : alexjercan
+ * Theme Repo               : https://github.com/alexjercan/hyprland.dotfiles
+ * Breaking Bad Theme Repo  : https://github.com/i3d/vim-jimbothemes
+ *******************************************************************************/
+
 * {
-    background: #161616;
-    foreground: #F1EFF0;
-    border-color: @background;
-    bg-selected: #292929;
-    grey: #404040;
-    spacing: 2;
-    width: 30em;
-    margin: 0;
-    padding: 0;
+    bad0:     #181818;
+    bad1:     #D7B650;
+    bad2:     #496519;
+    bad3:     #BCBF30;
+
+    bad4:     #FFD700;
+    bad5:     #348B4A;
+    bad6:     #678C61;
+
+    bad7:     #6D683C;
+    bad8:     #404040;
+    bad9:     #816C00;
+    bad10:    #305636;
+    bad11:    #FFD770;
+
+    bad12:    #4692EA;
+    bad13:    #644A7F;
+    bad14:    #81AD8E;
+    bad15:    #CEB874;
+
+    cursor:             #404040;
+    background:         #161616;
+    foreground:         #F1EFF0;
+    bg-selected:        #292929;
+    fg-selected:        #404040;
+
+    text-color:         @foreground;
+    background-color:   @background;
+
+    width:      30em;
+    margin:     0px;
+    padding:    0px;
+    spacing:    2px;
 }
 
-#window {
-    background-color: @background;
-    border: 0;
-    padding: 0;
-    location: center;
-    anchor: center;
-    height: 60%;
-    margin: 0;
+window {
+    location:   center;
+    anchor:     center;
+    height:     60%;
+    border:     0px;
+    margin:     0px;
+    padding:    0px;
 }
 
-#mainbox {
-    background-color: @background;
-    spacing: 10px;
-    margin: 10px 0 0 0;
-    width: 200px;
+inputbar {
+    padding:    8px 12px;
+    spacing:    12px;
+    children:   [ prompt, entry ];
 }
 
-#inputbar {
-    children: [prompt,entry];
-    background-color: @background;
+prompt,
+entry,
+listview,
+element,
+element-text,
+element-icon {
+    background-color: transparent;
 }
 
-#listview {
-    background-color: @background;
-    fixed-height: true;
-    margin: 5px 0 0 10px;
+prompt {
+    text-color: @bad4;
 }
 
-#element {
-    padding: 5px;
-    background-color: @background;
-    text-color: @foreground;
+listview {
+    lines:      8;
+    columns:    1;
+
+    fixed-height:   false;
+}
+
+element {
+    padding:    8px;
+    spacing:    8px;
 }
 
 element selected {
-    background-color: @bg-selected;
-    text-color: @foreground;
-}
-
-element-text {
-    background-color: inherit;
-    text-color: inherit;
+    background-color: @bad4;
+    text-color: @bad0;
 }
 
 element-icon {
-    background-color: inherit;
-    margin: 0 4px 0 0;
-    size: 25px;
+    size:   0.75em;
 }
 
-#entry {
-   background-color: @background;
-   text-color: @foreground;
-   placeholder: "Search";
-   placeholder-color: @grey;
-}
-
-#prompt {
-   background-color: @background;
-   padding: 0 4px;
-   margin: 0 5px 0 0;
-   text-color: @foreground;
+element-text {
+    text-color: inherit;
 }
