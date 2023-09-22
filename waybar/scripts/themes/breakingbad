@@ -12,6 +12,10 @@ cp $iDir/themes/breaking-bad.css $iDir/current-theme.css
 killall waybar
 waybar &
 
+#set the GTK theme
+gsettings set org.gnome.desktop.interface gtk-theme "BreakingBad"
+gsettings set org.gnome.desktop.interface icon-theme "Reversal-green-dark"
+
 # set the background
 killall swaybg
 swaybg -m fill -i ~/Pictures/wallpapers/breakingbad.jpg

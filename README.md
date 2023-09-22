@@ -4,8 +4,8 @@
 
 ##### My dotfiles for Hyprland and Waybar
 
-![fullscreen](./resources/fullscreen.png)
-![neofetch](./resources/neofetch.png)
+![fullscreen](./.resources/fullscreen.png)
+![neofetch](./.resources/neofetch.png)
 
 </div>
 
