@@ -6,6 +6,12 @@ notify-send -h string:x-canonical-private-synchronous:sys-notify -u low "Switchi
 #set the kitty theme
 kitty +kitten themes Github
 
+#set the waybar theme
+iDir="${XDG_CONFIG_HOME:=${HOME}/.config}/waybar/"
+cp $iDir/themes/github.css $iDir/current-theme.css
+killall waybar
+waybar &
+
 #set the GTK theme
 gsettings set org.gnome.desktop.interface gtk-theme "Catppuccin-Latte-Standard-Peach-Light"
 gsettings set org.gnome.desktop.interface icon-theme "Reversal-green"

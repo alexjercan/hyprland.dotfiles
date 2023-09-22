@@ -6,6 +6,12 @@ notify-send -h string:x-canonical-private-synchronous:sys-notify -u low "Switchi
 #set the kitty theme
 kitty +kitten themes Breaking\ Bad
 
+#set the waybar theme
+iDir="${XDG_CONFIG_HOME:=${HOME}/.config}/waybar/"
+cp $iDir/themes/breaking-bad.css $iDir/current-theme.css
+killall waybar
+waybar &
+
 # set the background
 killall swaybg
 swaybg -m fill -i ~/Pictures/wallpapers/breakingbad.jpg
