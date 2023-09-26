@@ -1,5 +1,5 @@
 configuration {
-/*	modes: "window,drun,run,ssh";*/
+  modes: "window,drun,run,ssh,emoji";
   font: "Iosevka Term 20";
 /*	location: 0;*/
 /*	yoffset: 0;*/
