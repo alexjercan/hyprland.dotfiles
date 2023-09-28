@@ -49,7 +49,7 @@
     "tooltip": true,
     "format": "{}",
     "interval": 1800,
-    "exec": "~/.config/waybar/scripts/waybar-wttr.py",
+    "exec": "wttr-in.py",
     "return-type": "json"
   },
   "custom/updates": {
@@ -123,19 +123,17 @@
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
     "format-icons": ["󰃞", "󰃟", "󰃠"],
-    "on-scroll-up": "~/.config/waybar/scripts/brightness --inc",
-    "on-scroll-down": "~/.config/waybar/scripts/brightness --dec",
-    "on-click": "~/.config/waybar/scripts/theme breakingbad",
-    "on-click-right": "~/.config/waybar/scripts/theme github",
+    "on-scroll-up": "swayosd-client --brightness 10",
+    "on-scroll-down": "swayosd-client --brightness -10",
     "min-length": 6
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-muted": " Muted",
     "on-click": "pavucontrol",
-    "on-click-right": "~/.config/waybar/scripts/volume --toggle",
-    "on-scroll-up": "~/.config/waybar/scripts/volume --inc",
-    "on-scroll-down": "~/.config/waybar/scripts/volume --dec",
+    "on-click-right": "swayosd-client --output-volume mute-toggle",
+    "on-scroll-up": "swayosd-client --output-volume 5",
+    "on-scroll-down": "swayosd-client --output-volume -5",
     "scroll-step": 5,
     "format-icons": {
       "headphone": "",

@@ -200,7 +200,7 @@
     max_icon_size = 64
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/Reversal-cyan-dark/16x16/status/:/usr/share/icons/Reversal-cyan-dark/16x16/devices/:/usr/share/icons/Reversal-cyan-dark/16x16/actions/:/usr/share/icons/Reversal-cyan-dark/16x16/animations/:/usr/share/icons/Reversal-cyan-dark/16x16/apps/:/usr/share/icons/Reversal-cyan-dark/16x16/categories/:/usr/share/icons/Reversal-cyan-dark/16x16/emblems/:/usr/share/icons/Reversal-cyan-dark/16x16/emotes/:/usr/share/icons/Reversal-cyan-dark/16x16/devices/mimetypes:/usr/share/icons/Reversal-cyan-dark/16x16/panel/:/usr/share/icons/Reversal-cyan-dark/16x16/places/
+    icon_path = /usr/share/icons/Reversal-green-dark/status/16/:/usr/share/icons/Reversal-green-dark/devices/16/:/usr/share/icons/Reversal-green-dark/actions/16/:/usr/share/icons/Reversal-green-dark/animations/16/:/usr/share/icons/Reversal-green-dark/apps/scalable/:/usr/share/icons/Reversal-green-dark/categories/32/:/usr/share/icons/Reversal-green-dark/emblems/16/:/usr/share/icons/Reversal-green-dark/mimes/48/:/usr/share/icons/Reversal-green-dark/places/16
 
     ### History ###
 

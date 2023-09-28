@@ -23,3 +23,7 @@ ln -s $(pwd)/kitty ~/.config/kitty
 
 unlink ~/.config/hyprland-autoname-workspaces 2> /dev/null || rm -rf ~/.config/hyprland-autoname-workspaces/
 ln -s $(pwd)/hyprland-autoname-workspaces ~/.config/hyprland-autoname-workspaces
+
+mkdir -p ~/.local/bin
+unlink ~/.local/bin/wttr-in.py 2> /dev/null || rm -f ~/.local/bin/wttr-in.py
+ln -s $(pwd)/scripts/wttr-in.py ~/.local/bin/wttr-in.py
