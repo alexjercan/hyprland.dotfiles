@@ -1,8 +1,8 @@
 window {
-    font-family: monospace;
+    font-family: Iosevka Term;
     font-size: 14pt;
-    color: #cdd6f4; /* text */
-    background-color: rgba(30, 30, 46, 0.5);
+    color: #F1EFF0; /* text */
+    background-color: rgba(22, 22, 22, 0.5);
 }
 
 button {
@@ -10,51 +10,51 @@ button {
     background-position: center;
     background-size: 25%;
     border: none;
-    background-color: rgba(30, 30, 46, 0);
+    background-color: rgba(0, 0, 0, 0);
     margin: 5px;
     transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 button:hover {
-    background-color: rgba(49, 50, 68, 0.1);
+    background-color: rgba(22, 22, 22, 0.1);
 }
 
 button:focus {
-    background-color: #cba6f7;
-    color: #1e1e2e;
+    background-color: #305636;
+    color: #F1EFF0;
 }
 
 #lock {
     background-image: image(url("./lock.png"));
 }
 #lock:focus {
-    background-image: image(url("./lock-hover.png"));
+    background-image: image(url("./lock.png"));
 }
 
 #logout {
     background-image: image(url("./logout.png"));
 }
 #logout:focus {
-    background-image: image(url("./logout-hover.png"));
+    background-image: image(url("./logout.png"));
 }
 
 #suspend {
     background-image: image(url("./sleep.png"));
 }
 #suspend:focus {
-    background-image: image(url("./sleep-hover.png"));
+    background-image: image(url("./sleep.png"));
 }
 
 #shutdown {
     background-image: image(url("./power.png"));
 }
 #shutdown:focus {
-    background-image: image(url("./power-hover.png"));
+    background-image: image(url("./power.png"));
 }
 
 #reboot {
     background-image: image(url("./restart.png"));
 }
 #reboot:focus {
-    background-image: image(url("./restart-hover.png"));
+    background-image: image(url("./restart.png"));
 }
