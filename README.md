@@ -18,6 +18,7 @@
 * [swaylock](https://github.com/swaywm/swaylock)
 * [wlogout](https://github.com/ArtsyMacaw/wlogout)
 * [kitty](https://github.com/kovidgoyal/kitty)
+* [hyprland-autoname-workspaces](https://github.com/hyprland-community/hyprland-autoname-workspaces)
 
 There are also some other packages like rofi, dunst, python, etc. that are
 used, but will add a full list soon.

@@ -20,3 +20,6 @@ ln -s $(pwd)/wlogout ~/.config/wlogout
 
 unlink ~/.config/kitty 2> /dev/null || rm -rf ~/.config/kitty/
 ln -s $(pwd)/kitty ~/.config/kitty
+
+unlink ~/.config/hyprland-autoname-workspaces 2> /dev/null || rm -rf ~/.config/hyprland-autoname-workspaces/
+ln -s $(pwd)/hyprland-autoname-workspaces ~/.config/hyprland-autoname-workspaces
