@@ -98,6 +98,8 @@ work = ""
 xplr = ""
 nemo = ""
 zoom = ""
+"(?i)pcmanfm" = ""
+"(?i)thunar" = ""
 
 [exclude]
 "" = "^$" # prevent displaying clients with empty class
