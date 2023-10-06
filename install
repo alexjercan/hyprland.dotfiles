@@ -27,3 +27,6 @@ ln -s $(pwd)/hyprland-autoname-workspaces ~/.config/hyprland-autoname-workspaces
 mkdir -p ~/.local/bin
 unlink ~/.local/bin/wttr-in.py 2> /dev/null || rm -f ~/.local/bin/wttr-in.py
 ln -s $(pwd)/scripts/wttr-in.py ~/.local/bin/wttr-in.py
+
+unlink ~/.local/bin/todo-tui.py 2> /dev/null || rm -f ~/.local/bin/todo-tui.py
+ln -s $(pwd)/scripts/todo-tui.py ~/.local/bin/todo-tui.py

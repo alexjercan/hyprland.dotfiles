@@ -17,6 +17,7 @@
   "modules-right": [
     "custom/weather",
     "custom/updates",
+    "custom/tasks",
     "cpu",
     "memory",
     "disk",
@@ -59,6 +60,15 @@
     "exec-if": "exit 0",
     "on-click": "kitty -e sudo pacman -Syu",
     "signal": 8
+  },
+  "custom/tasks": {
+    "format": " {}",
+    "interval": 60,
+    "exec": "todo-tui.py",
+    "on-click": "kitty -e todo-tui",
+    "tooltip": true,
+    "tooltip-format": "{}",
+    "return-type": "json"
   },
   "cpu": {
     "interval": 1,
