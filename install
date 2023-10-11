@@ -11,7 +11,3 @@ ln -s $(pwd)/kitty ~/.config/kitty
 
 unlink ~/.config/hyprland-autoname-workspaces 2> /dev/null || rm -rf ~/.config/hyprland-autoname-workspaces
 ln -s $(pwd)/hyprland-autoname-workspaces ~/.config/hyprland-autoname-workspaces
-
-rm -rf ~/.config/hypr/themes/breakingbad-hyprland-theme
-git clone --depth 1 git@github.com:alexjercan/breakingbad-hyprland-theme.git hypr/themes/breakingbad-hyprland-theme
-hyprtheme apply breakingbad-hyprland-theme

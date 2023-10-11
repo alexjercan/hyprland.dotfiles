@@ -1,28 +1,22 @@
-<div align="center">
-
 # Hyprland Config
 
-##### My dotfiles for Hyprland and Waybar
+This repository contains just the basics. For custom themes check out the
+Themes section.
 
-![fullscreen](./.resources/fullscreen.png)
-![neofetch](./.resources/neofetch.png)
-
-</div>
-
-## Installation
-
-* [hyprland](https://github.com/hyprwm/Hyprland)
-* [waybar](https://github.com/Alexays/Waybar)
-* [dunst](https://github.com/dunst-project/dunst)
-* [rofi](https://github.com/davatorium/rofi)
-* [swaylock](https://github.com/swaywm/swaylock)
-* [wlogout](https://github.com/ArtsyMacaw/wlogout)
-* [kitty](https://github.com/kovidgoyal/kitty)
-* [hyprland-autoname-workspaces](https://github.com/hyprland-community/hyprland-autoname-workspaces)
-
-There are also some other packages like rofi, dunst, python, etc. that are
-used, but will add a full list soon.
+## Quickstart
 
 ```console
-./install.sh
+./install
 ```
+
+## Dependencies
+
+* [hyprland](https://github.com/hyprwm/Hyprland)
+* [hyprland-autoname-workspaces](https://github.com/hyprland-community/hyprland-autoname-workspaces)
+* [kitty](https://github.com/kovidgoyal/kitty)
+* [rofi](https://github.com/davatorium/rofi)
+
+## Themes
+
+* [Breaking Bad](https://github.com/alexjercan/breakingbad-hyprland-theme)
+  custom theme inspired by the Breaking Bad show
