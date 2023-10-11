@@ -1,32 +1,13 @@
 #!/usr/bin/env bash
 
-unlink ~/.config/hypr 2> /dev/null || rm -rf ~/.config/hypr
+rm -rf ~/.config/hypr
 ln -s $(pwd)/hypr ~/.config/hypr
 
-unlink ~/.config/waybar 2> /dev/null || rm -rf ~/.config/waybar/
-ln -s $(pwd)/waybar ~/.config/waybar
-
-unlink ~/.config/dunst 2> /dev/null || rm -rf ~/.config/dunst/
-ln -s $(pwd)/dunst ~/.config/dunst
-
-unlink ~/.config/rofi 2> /dev/null || rm -rf ~/.config/rofi/
+rm -rf ~/.config/rofi/
 ln -s $(pwd)/rofi ~/.config/rofi
 
-unlink ~/.config/swaylock 2> /dev/null || rm -rf ~/.config/swaylock/
-ln -s $(pwd)/swaylock ~/.config/swaylock
-
-unlink ~/.config/wlogout 2> /dev/null || rm -rf ~/.config/wlogout/
-ln -s $(pwd)/wlogout ~/.config/wlogout
-
-unlink ~/.config/kitty 2> /dev/null || rm -rf ~/.config/kitty/
+rm -rf ~/.config/kitty/
 ln -s $(pwd)/kitty ~/.config/kitty
 
-unlink ~/.config/hyprland-autoname-workspaces 2> /dev/null || rm -rf ~/.config/hyprland-autoname-workspaces/
+rm -rf ~/.config/hyprland-autoname-workspaces/
 ln -s $(pwd)/hyprland-autoname-workspaces ~/.config/hyprland-autoname-workspaces
-
-mkdir -p ~/.local/bin
-unlink ~/.local/bin/wttr-in.py 2> /dev/null || rm -f ~/.local/bin/wttr-in.py
-ln -s $(pwd)/scripts/wttr-in.py ~/.local/bin/wttr-in.py
-
-unlink ~/.local/bin/todo-tui.py 2> /dev/null || rm -f ~/.local/bin/todo-tui.py
-ln -s $(pwd)/scripts/todo-tui.py ~/.local/bin/todo-tui.py
