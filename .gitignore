@@ -1,1 +1,7 @@
+hypr/themes
+
 *.bak
+kitty/themes
+kitty/current-theme.conf
+
+rofi/themes
