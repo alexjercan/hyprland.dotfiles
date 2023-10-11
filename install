@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-rm -rf ~/.config/hypr
+unlink ~/.config/hypr 2> /dev/null || rm -rf ~/.config/hypr
 ln -s $(pwd)/hypr ~/.config/hypr
 
-rm -rf ~/.config/rofi/
+unlink ~/.config/rofi 2> /dev/null || rm -rf ~/.config/rofi
 ln -s $(pwd)/rofi ~/.config/rofi
 
-rm -rf ~/.config/kitty/
+unlink ~/.config/kitty 2> /dev/null || rm -rf ~/.config/kitty
 ln -s $(pwd)/kitty ~/.config/kitty
 
-rm -rf ~/.config/hyprland-autoname-workspaces/
+unlink ~/.config/hyprland-autoname-workspaces 2> /dev/null || rm -rf ~/.config/hyprland-autoname-workspaces
 ln -s $(pwd)/hyprland-autoname-workspaces ~/.config/hyprland-autoname-workspaces
