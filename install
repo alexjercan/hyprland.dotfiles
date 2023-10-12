@@ -2,3 +2,5 @@
 
 unlink ~/.config/hypr 2> /dev/null || rm -rf ~/.config/hypr
 ln -s $(pwd)/hypr ~/.config/hypr
+mkdir -p ~/.config/hypr/themes/dist
+touch ~/.config/hypr/themes/dist/dist.conf
