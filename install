@@ -2,12 +2,3 @@
 
 unlink ~/.config/hypr 2> /dev/null || rm -rf ~/.config/hypr
 ln -s $(pwd)/hypr ~/.config/hypr
-
-unlink ~/.config/rofi 2> /dev/null || rm -rf ~/.config/rofi
-ln -s $(pwd)/rofi ~/.config/rofi
-
-unlink ~/.config/kitty 2> /dev/null || rm -rf ~/.config/kitty
-ln -s $(pwd)/kitty ~/.config/kitty
-
-unlink ~/.config/hyprland-autoname-workspaces 2> /dev/null || rm -rf ~/.config/hyprland-autoname-workspaces
-ln -s $(pwd)/hyprland-autoname-workspaces ~/.config/hyprland-autoname-workspaces

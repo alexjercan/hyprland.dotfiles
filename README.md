@@ -12,7 +12,6 @@ Themes section.
 ## Dependencies
 
 * [hyprland](https://github.com/hyprwm/Hyprland)
-* [hyprland-autoname-workspaces](https://github.com/hyprland-community/hyprland-autoname-workspaces)
 * [kitty](https://github.com/kovidgoyal/kitty)
 * [rofi](https://github.com/davatorium/rofi)
 
