@@ -19,3 +19,5 @@ Themes section.
 
 * [Breaking Bad](https://github.com/alexjercan/breakingbad-hyprland-theme)
   custom theme inspired by the Breaking Bad show
+* [Darker](https://github.com/alexjercan/darker-hyprland-theme) custom theme
+  idea stolen from reddit, nice for cold weather
