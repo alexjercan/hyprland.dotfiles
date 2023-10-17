@@ -13,7 +13,6 @@ else
         cd yay
         makepkg -si --noconfirm &>> ../$INSTLOG
         cd ..
-
     else
         echo -e "$CER - Yay is required for this script, now exiting"
         exit
