@@ -85,9 +85,10 @@ fi
 ### Set the theme ###
 read -n1 -rep 'Would you like to install hyprtheme? (y,n)' INSTHT
 if [[ $INSTHT == "Y" || $INSTHT == "y" ]]; then
-    mkdir -p ~/Downloads
-    git clone https://github.com/hyprland-community/hyprtheme ~/Downloads/hyprtheme
-    cd ~/Downloads/hyprtheme && make all
+    git clone https://github.com/hyprland-community/hyprtheme
+    cd hyprtheme
+    make all
+    cd ..
 
     mkdir -p ~/.config/hypr/themes
 
