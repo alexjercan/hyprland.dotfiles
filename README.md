@@ -11,9 +11,56 @@ Themes section.
 
 ## Dependencies
 
-* [hyprland](https://github.com/hyprwm/Hyprland)
-* [kitty](https://github.com/kovidgoyal/kitty)
-* [rofi](https://github.com/davatorium/rofi)
+I would recommend the following packages to begin with
+
+```text
+NetworkManager
+brave-bin
+brightnessctl
+dunst
+ffmpeg
+grimblast-git
+hyprland-autoname-workspaces
+hyprland-git
+hyprpicker-git
+kitty
+neovim
+noto-fonts
+noto-fonts-emoji
+nwg-look-bin
+pamixer
+pavucontrol
+playerctl
+polkit-gnome
+rofi
+sddm-git
+swaybg
+swaylock
+swaylock-effects
+swayosd-git
+thunar
+ttf-iosevka
+ttf-iosevka-nerd
+ttf-iosevka-term
+ttf-nerd-fonts-symbols-common
+waybar-hyprland
+wf-recorder
+wl-clipboard
+wlogout
+wlsunset
+xdg-portal-hyprland
+```
+
+Some extra things that I sometimes use
+
+```text
+dropbox
+steam
+discord
+```
+
+To be able to use themes you will also need to install
+<https://github.com/hyprland-community/hyprtheme> manually.
 
 ## Themes
 
