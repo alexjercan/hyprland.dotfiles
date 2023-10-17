@@ -19,6 +19,7 @@ brave-bin
 brightnessctl
 dunst
 ffmpeg
+fish
 grimblast-git
 hyprland-autoname-workspaces
 hyprland-git
@@ -54,9 +55,11 @@ xdg-portal-hyprland
 Some extra things that I sometimes use
 
 ```text
-dropbox
-steam
 discord
+dropbox
+gimp
+kdenlive
+steam
 ```
 
 To be able to use themes you will also need to install

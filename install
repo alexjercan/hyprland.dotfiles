@@ -1,6 +1,112 @@
 #!/usr/bin/env bash
 
-unlink ~/.config/hypr 2> /dev/null || rm -rf ~/.config/hypr
-ln -s $(pwd)/hypr ~/.config/hypr
-mkdir -p ~/.config/hypr/themes/dist
-touch ~/.config/hypr/themes/dist/dist.conf
+#### Check for yay ####
+ISYAY=/sbin/yay
+if [ -f "$ISYAY" ]; then
+    echo -e "$COK - yay was located, moving on."
+    yay -Suy
+else
+    echo -e "$CWR - Yay was NOT located"
+    read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to install yay (y,n) ' INSTYAY
+    if [[ $INSTYAY == "Y" || $INSTYAY == "y" ]]; then
+        git clone https://aur.archlinux.org/yay.git &>> $INSTLOG
+        cd yay
+        makepkg -si --noconfirm &>> ../$INSTLOG
+        cd ..
+
+    else
+        echo -e "$CER - Yay is required for this script, now exiting"
+        exit
+    fi
+fi
+
+### Install all of the required pacakges ####
+read -n1 -rep 'Would you like to install the required packages? (y,n)' INSTDEPS
+if [[ $INSTDEPS == "Y" || $INSTDEPS == "y" ]]; then
+    yay -S --noconfirm \
+        NetworkManager \
+        brave-bin \
+        brightnessctl \
+        dunst \
+        ffmpeg \
+        fish \
+        grimblast-git \
+        hyprland-autoname-workspaces \
+        hyprland-git \
+        hyprpicker-git \
+        kitty \
+        neovim \
+        noto-fonts \
+        noto-fonts-emoji \
+        nwg-look-bin \
+        pamixer \
+        pavucontrol \
+        playerctl \
+        polkit-gnome \
+        rofi \
+        sddm-git \
+        swaybg \
+        swaylock \
+        swaylock-effects \
+        swayosd-git \
+        thunar \
+        ttf-iosevka \
+        ttf-iosevka-nerd \
+        ttf-iosevka-term \
+        ttf-nerd-fonts-symbols-common \
+        waybar-hyprland \
+        wf-recorder \
+        wl-clipboard \
+        wlogout \
+        wlsunset \
+        xdg-portal-hyprland
+fi
+
+### Install all of the optional pacakges ####
+read -n1 -rep 'Would you like to install the optional packages? (y,n)' INSTOPT
+if [[ $INSTOPT == "Y" || $INSTOPT == "y" ]]; then
+    yay -S --noconfirm \
+        discord \
+        dropbox \
+        gimp \
+        kdenlive \
+        steam
+fi
+
+### Set the config files ###
+read -n1 -rep 'Would you like to copy config files? (y,n)' CFG
+if [[ $CFG == "Y" || $CFG == "y" ]]; then
+    unlink ~/.config/hypr 2> /dev/null || rm -rf ~/.config/hypr
+    ln -s $(pwd)/hypr ~/.config/hypr
+    mkdir -p ~/.config/hypr/themes/dist
+    touch ~/.config/hypr/themes/dist/dist.conf
+fi
+
+### Set the theme ###
+read -n1 -rep 'Would you like to install hyprtheme? (y,n)' INSTHT
+if [[ $INSTHT == "Y" || $INSTHT == "y" ]]; then
+    mkdir -p ~/Downloads
+    git clone https://github.com/hyprland-community/hyprtheme ~/Downloads/hyprtheme
+    cd ~/Downloads/hyprtheme && make all
+
+    mkdir -p ~/.config/hypr/themes
+
+    read -n1 -rep 'What theme would you like to set: default (0), breaking-bad (1), darker (2)?' THEME
+    if [[ $THEME == "1"]]; then
+        yay -S --noconfirm \
+            reversal-icon-theme-git
+        mkdir -p ~/.themes
+        git clone git@github.com:alexjercan/breaking-bad-gtk.git ~/.themes/breaking-bad-gtk
+        git clone git@github.com:alexjercan/breakingbad-hyprland-theme.git ~/.config/hypr/themes/breakingbad-hyprland-theme
+        hyprtheme apply breakingbad-hyprland-theme
+    elif [[ $THEME == "2"]]; then
+        yay -S --noconfirm \
+            graphite-gtk-theme \
+            tela-circle-icon-theme-all
+        git clone git@github.com:alexjercan/darker-hyprland-theme.git ~/.config/hypr/themes/darker-hyprland-theme
+        hyprtheme apply darker-hyprland-theme
+    fi
+fi
+
+### Script is done ###
+echo -e "Script had completed.\n"
