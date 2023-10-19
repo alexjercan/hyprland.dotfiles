@@ -46,7 +46,6 @@ if [[ $INSTDEPS == "Y" || $INSTDEPS == "y" ]]; then
         rofi \
         sddm-git \
         swaybg \
-        swaylock \
         swaylock-effects \
         swayosd-git \
         thunar \
