@@ -31,6 +31,7 @@ network-manager-applet
 noto-fonts
 noto-fonts-emoji
 nwg-look-bin
+pacman-contrib
 pamixer
 pavucontrol
 playerctl

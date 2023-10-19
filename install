@@ -41,6 +41,7 @@ if [[ $INSTDEPS == "Y" || $INSTDEPS == "y" ]]; then
         network-manager-applet \
         noto-fonts \
         noto-fonts-emoji \
+        pacman-contrib \
         nwg-look-bin \
         pamixer \
         pavucontrol \
