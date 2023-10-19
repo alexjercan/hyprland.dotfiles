@@ -14,6 +14,9 @@ Themes section.
 I would recommend the following packages to begin with
 
 ```text
+jq
+hyprkeys
+
 brave-bin
 brightnessctl
 dunst
@@ -32,10 +35,11 @@ pamixer
 pavucontrol
 playerctl
 polkit-gnome
+python-requests
 rofi
+rofi-emoji
 sddm-git
 swaybg
-swaylock
 swaylock-effects
 swayosd-git
 thunar
