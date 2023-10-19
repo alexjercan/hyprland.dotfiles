@@ -83,6 +83,9 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     ln -s $(pwd)/hypr ~/.config/hypr
     mkdir -p ~/.config/hypr/themes/dist
     touch ~/.config/hypr/themes/dist/dist.conf
+
+    unlink ~/.config/hyprland-autoname-workspaces 2> /dev/null || rm -rf ~/.config/hyprland-autoname-workspaces
+    ln -s $(pwd)/hyprland-autoname-workspaces ~/.config/hyprland-autoname-workspaces
 fi
 
 ### Set the theme ###
