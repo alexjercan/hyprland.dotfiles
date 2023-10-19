@@ -27,6 +27,7 @@ hyprpicker-git
 jq
 kitty
 neovim
+network-manager-applet
 noto-fonts
 noto-fonts-emoji
 nwg-look-bin

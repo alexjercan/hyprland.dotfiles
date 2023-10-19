@@ -38,6 +38,7 @@ if [[ $INSTDEPS == "Y" || $INSTDEPS == "y" ]]; then
         hyprpicker-git \
         kitty \
         neovim \
+        network-manager-applet \
         noto-fonts \
         noto-fonts-emoji \
         nwg-look-bin \
