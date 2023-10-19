@@ -14,18 +14,17 @@ Themes section.
 I would recommend the following packages to begin with
 
 ```text
-jq
-hyprkeys
-
 brave-bin
 brightnessctl
 dunst
 ffmpeg
 fish
 grimblast-git
+hyprkeys
 hyprland-autoname-workspaces
 hyprland-git
 hyprpicker-git
+jq
 kitty
 neovim
 noto-fonts
