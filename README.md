@@ -14,7 +14,6 @@ Themes section.
 I would recommend the following packages to begin with
 
 ```text
-NetworkManager
 brave-bin
 brightnessctl
 dunst

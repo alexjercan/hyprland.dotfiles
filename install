@@ -11,9 +11,9 @@ else
     echo -e "$CWR - Yay was NOT located"
     read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to install yay (y,n) ' INSTYAY
     if [[ $INSTYAY == "Y" || $INSTYAY == "y" ]]; then
-        git clone https://aur.archlinux.org/yay.git &>> $INSTLOG
+        git clone https://aur.archlinux.org/yay.git
         cd yay
-        makepkg -si --noconfirm &>> ../$INSTLOG
+        makepkg -si --noconfirm
         cd ..
     else
         echo -e "$CER - Yay is required for this script, now exiting"
@@ -25,7 +25,6 @@ fi
 read -n1 -rep 'Would you like to install the required packages? (y,n)' INSTDEPS
 if [[ $INSTDEPS == "Y" || $INSTDEPS == "y" ]]; then
     yay -S --noconfirm \
-        NetworkManager \
         brave-bin \
         brightnessctl \
         dunst \
