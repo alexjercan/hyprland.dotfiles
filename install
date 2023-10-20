@@ -25,7 +25,7 @@ fi
 read -n1 -rep 'Would you like to install the required packages? (y,n)' INSTDEPS
 if [[ $INSTDEPS == "Y" || $INSTDEPS == "y" ]]; then
     yay -S --noconfirm \
-        brave-nightly-bin \
+        brave-bin \
         brightnessctl \
         dunst \
         ffmpeg \
