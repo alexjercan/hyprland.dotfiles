@@ -14,7 +14,7 @@ Themes section.
 I would recommend the following packages to begin with
 
 ```text
-brave-bin
+brave-nightly-bin
 brightnessctl
 dunst
 ffmpeg
