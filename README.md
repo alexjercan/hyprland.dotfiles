@@ -48,7 +48,7 @@ ttf-iosevka
 ttf-iosevka-nerd
 ttf-iosevka-term
 ttf-nerd-fonts-symbols-common
-waybar-hyprland
+waybar-hyprland-git
 wf-recorder
 wl-clipboard
 wlogout

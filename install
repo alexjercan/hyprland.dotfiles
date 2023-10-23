@@ -59,7 +59,7 @@ if [[ $INSTDEPS == "Y" || $INSTDEPS == "y" ]]; then
         ttf-iosevka-nerd \
         ttf-iosevka-term \
         ttf-nerd-fonts-symbols-common \
-        waybar-hyprland \
+        waybar-hyprland-git \
         wf-recorder \
         wl-clipboard \
         wlogout \
