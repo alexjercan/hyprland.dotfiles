@@ -64,6 +64,7 @@ if [[ $INSTDEPS == "Y" || $INSTDEPS == "y" ]]; then
         wl-clipboard \
         wlogout \
         wlsunset \
+        wttrbar \
         xdg-portal-hyprland
 fi
 

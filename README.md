@@ -53,6 +53,7 @@ wf-recorder
 wl-clipboard
 wlogout
 wlsunset
+wttrbar
 xdg-portal-hyprland
 ```
 
