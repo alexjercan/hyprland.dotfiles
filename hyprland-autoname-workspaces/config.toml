@@ -13,8 +13,8 @@ client_dup_fullscreen = "[{icon}]{delim}{icon}{counter_unfocused_sup}"
 client_fullscreen = "[{icon}]{delim}"
 
 [title_in_class."(firefox|chrom.*|Brave)"]
-"(?i)youtube" = "ꟳ"
-"(?i)twitch" = "ꟳ"
+"(?i)youtube" = "<span color='#CE5252'></span>"
+"(?i)twitch" = "<span color='purple'></span>"
 
 [class]
 DEFAULT = ""
