@@ -25,7 +25,7 @@ fi
 read -n1 -rep 'Would you like to install the required packages? (y,n)' INSTDEPS
 if [[ $INSTDEPS == "Y" || $INSTDEPS == "y" ]]; then
     yay -S --noconfirm \
-        brave-nightly-bin \
+        firefox \
         brightnessctl \
         dunst \
         ffmpeg \
@@ -73,7 +73,6 @@ read -n1 -rep 'Would you like to install the optional packages? (y,n)' INSTOPT
 if [[ $INSTOPT == "Y" || $INSTOPT == "y" ]]; then
     yay -S --noconfirm \
         discord \
-        dropbox \
         gimp \
         kdenlive \
         steam
