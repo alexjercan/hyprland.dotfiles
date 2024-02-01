@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+
+#### Check for yay ####
+ISYAY=/sbin/yay
+if [ -f "$ISYAY" ]; then
+    echo -e "$COK - yay was located, moving on."
+    yay -Suy
+else
+    echo -e "$CWR - Yay was NOT located"
+    read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to install yay (y,n) ' INSTYAY
+    if [[ $INSTYAY == "Y" || $INSTYAY == "y" ]]; then
+        git clone https://aur.archlinux.org/yay.git
+        cd yay
+        makepkg -si --noconfirm
+        cd ..
+    else
+        echo -e "$CER - Yay is required for this script, now exiting"
+        exit
+    fi
+fi
+
+### Install all of the required pacakges ####
+read -n1 -rep 'Would you like to install the required packages? (y,n)' INSTDEPS
+if [[ $INSTDEPS == "Y" || $INSTDEPS == "y" ]]; then
+    yay -S --noconfirm \
+        firefox \
+        brightnessctl \
+        dunst \
+        ffmpeg \
+        fish \
+        grimblast-git \
+        hyprkeys \
+        hyprland-autoname-workspaces \
+        hyprland-git \
+        jq \
+        hyprpicker-git \
+        kitty \
+        neovim \
+        network-manager-applet \
+        noto-fonts \
+        noto-fonts-emoji \
+        pacman-contrib \
+        nwg-look-bin \
+        pamixer \
+        pavucontrol \
+        playerctl \
+        polkit-gnome \
+        python-requests \
+        rofi \
+        rofi-emoji \
+        sddm-git \
+        swaybg \
+        swaylock-effects \
+        swayosd-git \
+        thunar \
+        ttf-iosevka \
+        ttf-iosevka-nerd \
+        ttf-iosevka-term \
+        ttf-nerd-fonts-symbols-common \
+        waybar-hyprland-git \
+        wf-recorder \
+        wl-clipboard \
+        wlogout \
+        wlsunset \
+        wttrbar \
+        xdg-portal-hyprland
+fi
+
+### Install all of the optional pacakges ####
+read -n1 -rep 'Would you like to install the optional packages? (y,n)' INSTOPT
+if [[ $INSTOPT == "Y" || $INSTOPT == "y" ]]; then
+    yay -S --noconfirm \
+        discord \
+        gimp \
+        kdenlive \
+        steam
+fi
+

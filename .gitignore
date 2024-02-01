@@ -1,5 +1,2 @@
 hypr/themes
-
-*.bak
-kitty/themes
-kitty/current-theme.conf
+hypr/hyprland.conf

@@ -1,107 +1,74 @@
 #!/usr/bin/env bash
 
-echo -e "Setting up Hyprland...\n"
+COLOR_RED='\033[0;31m'
+COLOR_YELLOW='\033[0;33m'
+COLOR_GREEN='\033[0;32m'
+COLOR_BLUE='\033[0;34m'
+COLOR_RESET='\033[0m'
 
-#### Check for yay ####
-ISYAY=/sbin/yay
-if [ -f "$ISYAY" ]; then
-    echo -e "$COK - yay was located, moving on."
-    yay -Suy
+if [[ ! -x "$(command -v Hyprland)" ]]; then
+    echo -e "${COLOR_RED}Hyprland is not installed.${COLOR_RESET} Please install Hyprland first."
+    exit 1
+fi
+
+SCRIPT_DIR=$(dirname $(readlink -f $0))
+
+# DEPENDENCIES #
+# This script will install the dependencies for the dotfiles we assume that
+# you already have hyprland installed
+
+echo -e "${COLOR_BLUE}Installing dependencies...${COLOR_RESET}"
+
+DISTRO=$(cat /etc/os-release | grep -oP '(?<=^ID=).+' | tr -d '"')
+if [[ $DISTRO == "arch" ]]; then
+    echo -e "${COLOR_BLUE}Installing dependencies for Arch Linux...${COLOR_RESET}"
+    $SCRIPT_DIR/distro/arch
 else
-    echo -e "$CWR - Yay was NOT located"
-    read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to install yay (y,n) ' INSTYAY
-    if [[ $INSTYAY == "Y" || $INSTYAY == "y" ]]; then
-        git clone https://aur.archlinux.org/yay.git
-        cd yay
-        makepkg -si --noconfirm
-        cd ..
-    else
-        echo -e "$CER - Yay is required for this script, now exiting"
-        exit
-    fi
+    echo -e "${COLOR_RED}Unsupported distro: $DISTRO${COLOR_RESET}"
+    echo -e "${COLOR_YELLOW}You can raise an issue at https://github.com/alexjercan/hyprland.dotfiles/issues to add support for your distro${COLOR_RESET}"
+    exit 1
 fi
 
-### Install all of the required pacakges ####
-read -n1 -rep 'Would you like to install the required packages? (y,n)' INSTDEPS
-if [[ $INSTDEPS == "Y" || $INSTDEPS == "y" ]]; then
-    yay -S --noconfirm \
-        firefox \
-        brightnessctl \
-        dunst \
-        ffmpeg \
-        fish \
-        grimblast-git \
-        hyprkeys \
-        hyprland-autoname-workspaces \
-        hyprland-git \
-        jq \
-        hyprpicker-git \
-        kitty \
-        neovim \
-        network-manager-applet \
-        noto-fonts \
-        noto-fonts-emoji \
-        pacman-contrib \
-        nwg-look-bin \
-        pamixer \
-        pavucontrol \
-        playerctl \
-        polkit-gnome \
-        python-requests \
-        rofi \
-        rofi-emoji \
-        sddm-git \
-        swaybg \
-        swaylock-effects \
-        swayosd-git \
-        thunar \
-        ttf-iosevka \
-        ttf-iosevka-nerd \
-        ttf-iosevka-term \
-        ttf-nerd-fonts-symbols-common \
-        waybar-hyprland-git \
-        wf-recorder \
-        wl-clipboard \
-        wlogout \
-        wlsunset \
-        wttrbar \
-        xdg-portal-hyprland
-fi
+# HYPRLAND CONFIG #
 
-### Install all of the optional pacakges ####
-read -n1 -rep 'Would you like to install the optional packages? (y,n)' INSTOPT
-if [[ $INSTOPT == "Y" || $INSTOPT == "y" ]]; then
-    yay -S --noconfirm \
-        discord \
-        gimp \
-        kdenlive \
-        steam
-fi
+HYPR_DIR=$SCRIPT_DIR/hypr
+AUTONAME_DIR=$SCRIPT_DIR/hyprland-autoname-workspaces
+
+echo -e "${COLOR_BLUE}Setting up config files...${COLOR_RESET}"
 
 ### Set the config files ###
-read -n1 -rep 'Would you like to copy config files? (y,n)' CFG
+read -n1 -rep 'Would you like to copy config files? This will overwrite any existing config files. (y,n)' CFG
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
+    # Remove the old config
     unlink ~/.config/hypr 2> /dev/null || rm -rf ~/.config/hypr
-    ln -s $(pwd)/hypr ~/.config/hypr
-    mkdir -p ~/.config/hypr/themes/dist
-    touch ~/.config/hypr/themes/dist/dist.conf
 
+    # Set the config to the default
+    cp $HYPR_DIR/hyprland.default.conf $HYPR_DIR/hyprland.conf
+    ln -s $HYPR_DIR ~/.config/hypr
+
+    # Set the autoname config
     unlink ~/.config/hyprland-autoname-workspaces 2> /dev/null || rm -rf ~/.config/hyprland-autoname-workspaces
-    ln -s $(pwd)/hyprland-autoname-workspaces ~/.config/hyprland-autoname-workspaces
+    ln -s $AUTONAME_DIR ~/.config/hyprland-autoname-workspaces
 fi
 
 ### Set the theme ###
+
+echo -e "${COLOR_BLUE}Setting up theme...${COLOR_RESET}"
+
 read -n1 -rep 'Would you like to install hyprtheme? (y,n)' INSTHT
 if [[ $INSTHT == "Y" || $INSTHT == "y" ]]; then
-    git clone https://github.com/hyprland-community/hyprtheme
-    cd hyprtheme
+    mkdir -p ~/.cache/hyprtheme
+    git clone https://github.com/hyprland-community/hyprtheme ~/.cache/hyprtheme
+    cd ~/.cache/hyprtheme
     make all
-    cd ..
+    cd -
 
-    mkdir -p ~/.config/hypr/themes
+    # Set the theme to nothing; just create the directory
+    mkdir -p ~/.config/hypr/themes/dist
+    touch ~/.config/hypr/themes/dist/dist.conf
 fi
 
-if command -v hyprtheme &> /dev/null
+if [[ -x "$(command -v hyprtheme)" ]];
 then
     read -n1 -rep 'What theme would you like to set: default (0), breaking-bad (1), darker (2), gruvbox (3)?' THEME
     if [[ $THEME == "1" ]]; then
@@ -119,5 +86,7 @@ then
     fi
 fi
 
-### Script is done ###
-echo -e "Script had completed.\n"
+# INSTALLATION COMPLETE #
+
+echo -e "${COLOR_GREEN}Installation complete!${COLOR_RESET}"
+echo "You can now login into your hyprland session."
