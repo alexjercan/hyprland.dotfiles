@@ -54,9 +54,12 @@ fi
 
 ### Shell settings ###
 
-read -n1 -rep 'Would you like to set the default shell to fish? (y,n)' SETSHELL
-if [[ $SETSHELL == "Y" || $SETSHELL == "y" ]]; then
-     chsh -s /usr/bin/fish
+CURRENT_SHELL=$(echo $SHELL | grep -oP '(?<=/bin/).+')
+if [[ $CURRENT_SHELL != "fish" ]]; then
+    read -n1 -rep 'Would you like to set the default shell to fish? (y,n)' SETSHELL
+    if [[ $SETSHELL == "Y" || $SETSHELL == "y" ]]; then
+         chsh -s /usr/bin/fish
+    fi
 fi
 
 ### Set the theme ###
@@ -65,11 +68,25 @@ echo -e "${COLOR_BLUE}Setting up theme...${COLOR_RESET}"
 
 read -n1 -rep 'Would you like to install hyprtheme? (y,n)' INSTHT
 if [[ $INSTHT == "Y" || $INSTHT == "y" ]]; then
-    mkdir -p ~/.cache/hyprtheme
-    git clone https://github.com/hyprland-community/hyprtheme ~/.cache/hyprtheme
-    cd ~/.cache/hyprtheme
-    make all
-    cd -
+    if [[ ! -x "$(command -v cargo)" ]];
+    then
+        read -n1 -rep 'Cargo is not installed, but is required for hyprtheme. Would you like to install it using rustup? (y,n)' INSTCARGO
+        if [[ $INSTCARGO == "Y" || $INSTCARGO == "y" ]]; then
+            curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+            source "$HOME/.cargo/env"
+        else
+            echo -e "${COLOR_RED}Cargo is required for hyprtheme. Please install it and run this script again.${COLOR_RESET}"
+        fi
+    fi
+
+    if [[ -x "$(command -v cargo)" ]];
+    then
+        mkdir -p ~/.cache/hyprtheme
+        git clone https://github.com/hyprland-community/hyprtheme ~/.cache/hyprtheme
+        cd ~/.cache/hyprtheme
+        make all
+        cd -
+    fi
 fi
 
 if [[ -x "$(command -v hyprtheme)" ]];
