@@ -73,16 +73,19 @@ if [[ -x "$(command -v hyprtheme)" ]];
 then
     read -n1 -rep 'What theme would you like to set: default (0), breaking-bad (1), darker (2), gruvbox (3)?' THEME
     if [[ $THEME == "1" ]]; then
+        hyprtheme init
         git clone https://github.com/alexjercan/breakingbad-hyprland-theme.git ~/.config/hypr/themes/breakingbad-hyprland-theme
         bash ~/.config/hypr/themes/breakingbad-hyprland-theme/install
         hyprtheme enable breakingbad-hyprland-theme
         bash ~/.config/hypr/themes/breakingbad-hyprland-theme/load
     elif [[ $THEME == "2" ]]; then
+        hyprtheme init
         git clone https://github.com/alexjercan/darker-hyprland-theme.git ~/.config/hypr/themes/darker-hyprland-theme
         bash ~/.config/hypr/themes/darker-hyprland-theme/install
         hyprtheme enable darker-hyprland-theme
         bash ~/.config/hypr/themes/darker-hyprland-theme/load
     elif [[ $THEME == "3" ]]; then
+        hyprtheme init
         git clone https://github.com/alexjercan/gruv-hyprland-theme.git ~/.config/hypr/themes/gruv-hyprland-theme
         bash ~/.config/hypr/themes/gruv-hyprland-theme/install
         hyprtheme enable gruv-hyprland-theme
