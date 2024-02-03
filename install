@@ -65,8 +65,8 @@ if [[ $INSTHT == "Y" || $INSTHT == "y" ]]; then
     cd -
 
     # Set the theme to nothing; just create the directory
-    mkdir -p ~/.config/hypr/themes/dist
-    touch ~/.config/hypr/themes/dist/dist.conf
+    mkdir -p ~/.config/hypr/themes/
+    touch ~/.config/hypr/themes/hyprtheme.conf
 fi
 
 if [[ -x "$(command -v hyprtheme)" ]];
