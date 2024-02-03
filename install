@@ -52,6 +52,13 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     ln -s $AUTONAME_DIR ~/.config/hyprland-autoname-workspaces
 fi
 
+### Shell settings ###
+
+read -n1 -rep 'Would you like to set the default shell to fish? (y,n)' SETSHELL
+if [[ $SETSHELL == "Y" || $SETSHELL == "y" ]]; then
+     chsh -s /usr/bin/fish
+fi
+
 ### Set the theme ###
 
 echo -e "${COLOR_BLUE}Setting up theme...${COLOR_RESET}"
