@@ -6,6 +6,8 @@ Themes section.
 ## Quickstart
 
 ```console
+git clone https://github.com/alexjercan/hyprland.dotfiles.git
+cd hyprland.dotfiles
 ./install
 ```
 
