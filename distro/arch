@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-### Install basic tools ###
-
-sudo pacman -S --noconfirm make
-
 #### Check for yay ####
 ISYAY=/sbin/yay
 if [ -f "$ISYAY" ]; then
@@ -13,6 +9,8 @@ else
     echo -e "$CWR - Yay was NOT located"
     read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to install yay (y,n) ' INSTYAY
     if [[ $INSTYAY == "Y" || $INSTYAY == "y" ]]; then
+        sudo pacman -S --noconfirm make
+
         mkdir -p ~/.cache/yay
         git clone https://aur.archlinux.org/yay.git ~/.cache/yay
         cd ~/.cache/yay
