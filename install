@@ -75,15 +75,18 @@ then
     if [[ $THEME == "1" ]]; then
         git clone https://github.com/alexjercan/breakingbad-hyprland-theme.git ~/.config/hypr/themes/breakingbad-hyprland-theme
         bash ~/.config/hypr/themes/breakingbad-hyprland-theme/install
-        hyprtheme apply breakingbad-hyprland-theme
+        hyprtheme enable breakingbad-hyprland-theme
+        bash ~/.config/hypr/themes/breakingbad-hyprland-theme/load
     elif [[ $THEME == "2" ]]; then
         git clone https://github.com/alexjercan/darker-hyprland-theme.git ~/.config/hypr/themes/darker-hyprland-theme
         bash ~/.config/hypr/themes/darker-hyprland-theme/install
-        hyprtheme apply darker-hyprland-theme
+        hyprtheme enable darker-hyprland-theme
+        bash ~/.config/hypr/themes/darker-hyprland-theme/load
     elif [[ $THEME == "3" ]]; then
         git clone https://github.com/alexjercan/gruv-hyprland-theme.git ~/.config/hypr/themes/gruv-hyprland-theme
         bash ~/.config/hypr/themes/gruv-hyprland-theme/install
-        hyprtheme apply gruv-hyprland-theme
+        hyprtheme enable gruv-hyprland-theme
+        bash ~/.config/hypr/themes/gruv-hyprland-theme/load
     fi
 fi
 
