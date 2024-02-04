@@ -99,20 +99,17 @@ then
 
     read -n1 -rep 'What theme would you like to set: default (0), breaking-bad (1), darker (2), gruvbox (3)?' THEME
     if [[ $THEME == "1" ]]; then
-        git clone https://github.com/alexjercan/breakingbad-hyprland-theme.git ~/.config/hypr/themes/breakingbad-hyprland-theme
-        bash ~/.config/hypr/themes/breakingbad-hyprland-theme/install
-        hyprtheme enable breakingbad-hyprland-theme
-        bash ~/.config/hypr/themes/breakingbad-hyprland-theme/load ~/.config/hypr/themes/breakingbad-hyprland-theme
+        git clone https://github.com/alexjercan/breakingbad-hyprland-theme.git ~/.config/hypr/themes/breakingbad
+        bash ~/.config/hypr/themes/breakingbad/install
+        hyprtheme enable breakingbad
     elif [[ $THEME == "2" ]]; then
-        git clone https://github.com/alexjercan/darker-hyprland-theme.git ~/.config/hypr/themes/darker-hyprland-theme
-        bash ~/.config/hypr/themes/darker-hyprland-theme/install
-        hyprtheme enable darker-hyprland-theme
-        bash ~/.config/hypr/themes/darker-hyprland-theme/load ~/.config/hypr/themes/darker-hyprland-theme
+        git clone https://github.com/alexjercan/darker-hyprland-theme.git ~/.config/hypr/themes/darker
+        bash ~/.config/hypr/themes/darker/install
+        hyprtheme enable darker
     elif [[ $THEME == "3" ]]; then
-        git clone https://github.com/alexjercan/gruv-hyprland-theme.git ~/.config/hypr/themes/gruv-hyprland-theme
-        bash ~/.config/hypr/themes/gruv-hyprland-theme/install
-        hyprtheme enable gruv-hyprland-theme
-        bash ~/.config/hypr/themes/gruv-hyprland-theme/load ~/.config/hypr/themes/gruv-hyprland-theme
+        git clone https://github.com/alexjercan/gruv-hyprland-theme.git ~/.config/hypr/themes/gruv
+        bash ~/.config/hypr/themes/gruv/install
+        hyprtheme enable gruv
     fi
 fi
 
