@@ -110,6 +110,9 @@ then
         git clone https://github.com/alexjercan/gruv-hyprland-theme.git ~/.config/hypr/themes/gruv
         bash ~/.config/hypr/themes/gruv/install
         hyprtheme enable gruv
+    else
+        bash ~/.config/hypr/themes/default/install
+        hyprtheme enable default
     fi
 fi
 

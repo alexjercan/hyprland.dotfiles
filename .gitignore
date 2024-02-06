@@ -1,2 +1,3 @@
-hypr/themes
+hypr/themes/*
+!hypr/themes/default
 hypr/hyprland.conf

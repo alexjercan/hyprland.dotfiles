@@ -1,0 +1,26 @@
+#!/usr/bin/bash
+
+THEME_DIR=$1
+
+# Set the kitty terminal theme to default
+# INFO: this destroys your old kitty config
+mkdir -p ~/.config/kitty/themes
+rm ~/.config/kitty/kitty.conf
+kitty +kitten themes --reload-in=all "default"
+
+# Set the rofi theme to default
+# INFO: this destroys your old rofi config
+mkdir -p ~/.config/rofi/themes
+rm ~/.config/rofi/config.rasi
+
+# Set the swaylock theme to default
+# INFO: this destroys your old swaylock config
+unlink ~/.config/swaylock 2> /dev/null || rm -rf ~/.config/swaylock/
+
+# Set the wlogout theme to default
+# INFO: this destroys your old wlogout config
+unlink ~/.config/wlogout 2> /dev/null || rm -rf ~/.config/wlogout/
+
+# Set GTK theme
+gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
