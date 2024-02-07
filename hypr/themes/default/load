@@ -2,6 +2,14 @@
 
 THEME_DIR=$1
 
+# Set the wallpaper
+killall swaybg
+swaybg -m fill -c "#181818" &
+
+# Enabe the dunst notification daemon
+killall dunst
+dunst &
+
 # Set the kitty terminal theme to default
 # INFO: this destroys your old kitty config
 mkdir -p ~/.config/kitty/themes
@@ -16,6 +24,10 @@ rm ~/.config/rofi/config.rasi
 # Set the swaylock theme to default
 # INFO: this destroys your old swaylock config
 unlink ~/.config/swaylock 2> /dev/null || rm -rf ~/.config/swaylock/
+
+# Set the waybar theme
+killall waybar
+waybar &
 
 # Set the wlogout theme to default
 # INFO: this destroys your old wlogout config
